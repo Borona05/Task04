@@ -88,7 +88,7 @@ function what_do_button_logic() {
             let cat = document.createElement('img');
 
             secret.classList = 'secret';
-            cat.src = 'D:/downloads/cat.jpg';
+            cat.src = '/Task04/cat.jpg';
             cat.id = 'cat';
 
             secret.append(cat);
