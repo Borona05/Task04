@@ -120,7 +120,38 @@ function what_do_button_logic() {
     }
 }
 
+function plus() {
+    var x = parseInt(document.getElementById('txtX').value);
+    var y = parseInt(document.getElementById('txtY').value);
+    var z = x + y;
+
+    document.getElementById('txtZ').value = z;
+    document.getElementById('btnPlus').className = 'pressed';
+    document.getElementById('btnMinus').className = '';
+}
+
+function minus() {
+    var x = parseInt(document.getElementById('txtX').value);
+    var y = parseInt(document.getElementById('txtY').value);
+    var z = x - y;
+
+    document.getElementById('txtZ').value = z;
+    document.getElementById('btnMinus').className = 'pressed';
+    document.getElementById('btnPlus').className = '';
+}
+
 document.addEventListener('DOMContentLoaded', function (){
     create_blocks();
     what_do_button_logic();
+
+    let btnPlus = document.getElementById('btnPlus');
+    let btnMinus = document.getElementById('btnMinus');
+    let first_screen = document.getElementById('first_screen');
+    let second_screen = document.getElementById('second_screen');
+    btnPlus.onclick = function (){
+        first_screen.style.transform = 'translate(-100vw);';
+    }
+    btnMinus.onclick = function (){
+        second_screen.style.transform = 'translate(-100vw);';
+    }
 });

@@ -31,6 +31,31 @@ body {
     animation: 10s gradient infinite;
 }
 
+.page {
+    display: flex;
+    width: 200vw;
+    height: 100vh;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+.copy_block input, .copy_block button {
+    margin-bottom: 10px;
+}
+
+.copy_block input {
+    width: 120px;
+    text-align: center;
+}
+
+.copy_block button {
+    width: 62px;
+}
+
 @keyframes show_block {
     0% {
         opacity: 0;
