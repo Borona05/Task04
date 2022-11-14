@@ -24,17 +24,12 @@ body {
     user-select: none;
     overflow: hidden;
     display: flex;
+    width: 200vw;
+    height: 100vh;
     background-color: #D3D3D3;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     animation: 10s gradient infinite;
-}
-
-.page {
-    display: flex;
-    width: 200vw;
-    height: 100vh;
 }
 
 .screen {
