@@ -1,3 +1,5 @@
+let answer = undefined;
+
 function bias_string(string, number) {
     for (var i = 0; i < number; i++) {
         string = string.charAt(string.length - 1) + string.substr(0, string.length - 1);
@@ -11,6 +13,8 @@ function create_blocks() {
 
     text_alert_top.classList = 'text_alert top';
     text_alert_bottom.classList = 'text_alert bottom';
+    text_alert_top.style.animation = '0.5s show_block';
+    text_alert_bottom.style.animation = '0.5s show_block';
 
     for (let i = 0; i < 8; i++){
         let line_text = 'Я бегающий текст Я бегающий текст Я бегающий текст Я бегающий текст Я бегающий текст ';
@@ -28,8 +32,8 @@ function create_blocks() {
         text_alert_bottom.append(bottom_div);
     }
 
-    document.body.children[1].append(text_alert_top);
-    document.body.children[1].append(text_alert_bottom);
+    document.body.append(text_alert_top);
+    document.body.append(text_alert_bottom);
 
     setInterval(function () {
         for (let i = 0; i < 8; i++) {
@@ -102,7 +106,7 @@ function what_do_button_logic() {
 
                 let new_hint_block = document.createElement('div');
 
-                new_hint_block.innerHTML = 'О нет! Вы напугали котика';
+                new_hint_block.innerHTML = 'О нет! Вы напугали котика. Но зато он сказал, что ответ: ' + answer;
                 new_hint_block.classList = 'hint_block';
                 new_hint_block.style.animation = '0.5s show_block';
 
@@ -120,6 +124,21 @@ function what_do_button_logic() {
     }
 }
 
+function on_story() {
+    let what_do_button = document.createElement('div')
+
+    what_do_button.id = 'what_do_button';
+    what_do_button.classList.add('what_do_button');
+    what_do_button.innerHTML = 'Что же делает эта кнопка?<br>Интересно? Нажмите, чтобы узнать';
+    what_do_button.style.animation = '0.5s show_block';
+
+    document.body.innerHTML = '';
+    document.body.append(what_do_button)
+
+    what_do_button_logic();
+    create_blocks();
+}
+
 function plus() {
     var x = parseInt(document.getElementById('txtX').value);
     var y = parseInt(document.getElementById('txtY').value);
@@ -128,6 +147,10 @@ function plus() {
     document.getElementById('txtZ').value = z;
     document.getElementById('btnPlus').className = 'pressed';
     document.getElementById('btnMinus').className = '';
+
+    answer = z;
+
+    on_story();
 }
 
 function minus() {
@@ -138,20 +161,8 @@ function minus() {
     document.getElementById('txtZ').value = z;
     document.getElementById('btnMinus').className = 'pressed';
     document.getElementById('btnPlus').className = '';
+
+    answer = z;
+
+    on_story();
 }
-
-document.addEventListener('DOMContentLoaded', function (){
-    create_blocks();
-    what_do_button_logic();
-
-    let btnPlus = document.getElementById('btnPlus');
-    let btnMinus = document.getElementById('btnMinus');
-    let first_screen = document.getElementById('first_screen');
-    let second_screen = document.getElementById('second_screen');
-    btnPlus.onclick = function (){
-        first_screen.style.transform = 'translateX(-100vw);';
-    }
-    btnMinus.onclick = function (){
-        second_screen.style.transform = 'translateX(-100vw);';
-    }
-});

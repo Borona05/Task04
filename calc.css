@@ -24,31 +24,11 @@ body {
     user-select: none;
     overflow: hidden;
     display: flex;
-    width: 200vw;
-    height: 100vh;
     background-color: #D3D3D3;
     justify-content: center;
     align-items: center;
-    animation: 10s gradient infinite;
-}
-
-.screen {
-    width: 100vw;
     height: 100vh;
-    transition: 0.5s;
-}
-
-.copy_block input, .copy_block button {
-    margin-bottom: 10px;
-}
-
-.copy_block input {
-    width: 120px;
-    text-align: center;
-}
-
-.copy_block button {
-    width: 62px;
+    animation: 10s gradient infinite;
 }
 
 @keyframes show_block {
@@ -162,6 +142,19 @@ body {
     text-align: center;
 }
 
-.anim_block {
-    overflow: hidden;
+.calculator {
+    text-align: center;
+}
+
+input, button {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 120px;
+    text-align: center;
+}
+
+button {
+    width: 62px;
 }
