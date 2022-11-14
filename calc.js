@@ -28,8 +28,8 @@ function create_blocks() {
         text_alert_bottom.append(bottom_div);
     }
 
-    document.body.append(text_alert_top);
-    document.body.append(text_alert_bottom);
+    document.body.children[1].append(text_alert_top);
+    document.body.children[1].append(text_alert_bottom);
 
     setInterval(function () {
         for (let i = 0; i < 8; i++) {
