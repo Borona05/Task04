@@ -149,9 +149,9 @@ document.addEventListener('DOMContentLoaded', function (){
     let first_screen = document.getElementById('first_screen');
     let second_screen = document.getElementById('second_screen');
     btnPlus.onclick = function (){
-        first_screen.style.transform = 'translate(-100vw);';
+        first_screen.style.transform = 'translateX(-100vw);';
     }
     btnMinus.onclick = function (){
-        second_screen.style.transform = 'translate(-100vw);';
+        second_screen.style.transform = 'translateX(-100vw);';
     }
 });
